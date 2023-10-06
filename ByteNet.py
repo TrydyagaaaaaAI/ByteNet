@@ -5,6 +5,7 @@ try:
     from src.config import COLOR_CODE, GLOBAL_SOFT_INFO, print_banner, print_welcome_text
     from src.httpweb_ip import HttpWebIp
     from src.httpweb_mnp import HttpWebMnp
+    from src.httpweb_name import HttpWebName
     from src.httpweb_number import HttpWebNumber
     from src.blocked_countries import BlockedCountries
     from src.httpweb_tempmail import HttpWebTempMail
@@ -60,7 +61,10 @@ if __name__ == "__main__":
             f'Проверить {COLOR_CODE["YELLOW"]}IP{COLOR_CODE["CYAN"]} телефона.{COLOR_CODE["RESET"]}\n'
 
             f'{COLOR_CODE["RED"]}{COLOR_CODE["BOLD"]}[4] {COLOR_CODE["URL_L"]}'
-            f'Создать {COLOR_CODE["YELLOW"]}Временную{COLOR_CODE["CYAN"]} почту.{COLOR_CODE["RESET"]}\n')
+            f'Создать {COLOR_CODE["YELLOW"]}Временную{COLOR_CODE["CYAN"]} почту.{COLOR_CODE["RESET"]}\n'
+
+            f'{COLOR_CODE["RED"]}{COLOR_CODE["BOLD"]}[5] {COLOR_CODE["URL_L"]}'
+            f'Поиск {COLOR_CODE["YELLOW"]}по{COLOR_CODE["CYAN"]} ФИ.{COLOR_CODE["RESET"]}\n')
 
         try:
         
@@ -92,10 +96,14 @@ if __name__ == "__main__":
                 httptemp_mail.print_tempmail_info()
                 httptemp_mail.print_tempmail_results()
 
+                # Поиск по ФИ
+            elif user_chooice == "5":
 
 
 
-                input(f'\n{COLOR_CODE["CYAN"]}{COLOR_CODE["BOLD"]}[{COLOR_CODE["RED"]}!{COLOR_CODE["CYAN"]}] {COLOR_CODE["LI_G"]}' + 
+
+
+                input(f'\n{COLOR_CODE["CYAN"]}{COLOR_CODE["BOLD"]}[{COLOR_CODE["RED"]}!{COLOR_CODE["CYAN"]}] {COLOR_CODE["LI_G"]}' +
                   f'Чтобы вернуться назад, нажмите{COLOR_CODE["DARK"]} {COLOR_CODE["RESET"]}PRESS ')
 
             # Повторный опрос

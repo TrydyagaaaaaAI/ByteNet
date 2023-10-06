@@ -3,10 +3,6 @@ from .config import COLOR_CODE, console_clear
 from functools import lru_cache
 
 class HttpWebNumber:
-    """Информация получаемая с сайта httpweb.ru никак\n
-    не синхронизирован/связан с noblack-mail а так-же с noblack.command.
-    :param: `user_number` - Номер телефона."""
-
     def __init__(self) -> None:
         self.__check_number_link: str = "https://htmlweb.ru/geo/api.php?json&telcod="
         self.__not_found_text: str = "Информация отсутствует"
@@ -14,11 +10,6 @@ class HttpWebNumber:
     # Получение данных по номеру
     @lru_cache(maxsize=None)
     def __return_number_data(self, user_number: str) -> dict:
-        """Получение данных о номере телефона
-        :param: `self.__check_mnp_link:` str — Адрес сайта для получения данных по номеру телефона.
-        :return: `__result_number_data:` dict - Данные клиента.
-        """
-
         # Получение данных MNP по номеру тел. клиента 
         try:
             __result_number_data = requests.get(self.__check_number_link + user_number)
