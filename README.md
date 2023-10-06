@@ -4,6 +4,7 @@
 ⌜:full_moon:⌟ Пробив по MNP
 ⌜:full_moon:⌟ Пробив по IP
 ⌜:full_moon:⌟ Создать temp-mail
+⌜:full_moon:⌟ Поиск по ФИ
 ByteNet в бета версии и будет обновляться и дополнятся функциями
 
 
