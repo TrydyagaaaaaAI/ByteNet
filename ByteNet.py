@@ -1,5 +1,11 @@
 import os
 import webbrowser
+import pyfiglet
+
+text = "ByteNet"
+font = "slant"
+ascii_banner = pyfiglet.figlet_format(text, font=font).upper()
+
 
 try:
     # Проверка на наличие модулей
@@ -48,11 +54,14 @@ if __name__ == "__main__":
 
     while True:
         # Показ баннера
-        print_banner()
+        ascii_banner = pyfiglet.figlet_format(text, font=font)
 
         # Меню управления
         console_clear()
-        print(f'{COLOR_CODE["RED"]}{COLOR_CODE["BOLD"]}[1] {COLOR_CODE["URL_L"]}'
+        print(f'{COLOR_CODE["URL_L"]}{ascii_banner}{COLOR_CODE["RESET"]}')
+        print(
+
+            f'{COLOR_CODE["RED"]}{COLOR_CODE["BOLD"]}[1] {COLOR_CODE["URL_L"]}'
             f'Проверить {COLOR_CODE["YELLOW"]}Номер{COLOR_CODE["CYAN"]} телефона.{COLOR_CODE["RESET"]}\n'
             
             f'{COLOR_CODE["RED"]}{COLOR_CODE["BOLD"]}[2] {COLOR_CODE["URL_L"]}'
@@ -105,7 +114,9 @@ if __name__ == "__main__":
                 town = input(f"{COLOR_CODE['CYAN']}Введите город: {COLOR_CODE['RESET']}")
                 country = input(f"{COLOR_CODE['CYAN']}Введите страну: {COLOR_CODE['RESET']}")
                 result = f"https://rfpoisk.ru/search/?search={name}+{surname}&town={town}&country={country}"
-                webbrowser.open(result)
+                print(f'{COLOR_CODE["URL_L"]}{result}{COLOR_CODE["BOLD"]}[{COLOR_}]')
+                time.sleep(0.3)
+                print(f'{COLOR_CODE["CYAN"]}Передите по ссылке выше.{COLOR_CODE["BOLD"]}')
 
                 input(f'\n{COLOR_CODE["CYAN"]}{COLOR_CODE["BOLD"]}[{COLOR_CODE["RED"]}!{COLOR_CODE["CYAN"]}] {COLOR_CODE["LI_G"]}' +
                   f'Чтобы вернуться назад, нажмите{COLOR_CODE["DARK"]} {COLOR_CODE["RESET"]}PRESS ')
