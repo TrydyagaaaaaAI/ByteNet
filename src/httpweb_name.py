@@ -14,15 +14,12 @@ class HttpWebName:
             if self.__not_found_text not in response.text:
                 return response.text
             else:
-                return "Номер не найден"
+                return "Сайт не найден"
+                webbrowser.open(result)
         else:
             return "Ошибка при выполнении запроса"
 
-http_web_number = HttpWebName()
-name = input("Введите имя: ")
-surname = input("Введите фамилию: ")
-town = input("Введите город: ")
-country = input("Введите страну: ")
-result = http_web_number.search(name, surname, town, country)
-webbrowser.open(result)
+http_web_number = HttpWebName
+
+
 

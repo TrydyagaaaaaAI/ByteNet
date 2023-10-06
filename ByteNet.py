@@ -1,4 +1,5 @@
 import os
+import webbrowser
 
 try:
     # Проверка на наличие модулей
@@ -26,7 +27,7 @@ except ImportError:
     exit(f'\n{COLOR_CODE["RED"]}[!] {COLOR_CODE["YELLOW"]}У вас отсутствует модули: '+
          f'{COLOR_CODE["CYAN"]}requests{COLOR_CODE["RESET"]} и/или {COLOR_CODE["CYAN"]}'+
          f'bs4{COLOR_CODE["RESET"]}. {COLOR_CODE["RED"]}\n[*] {COLOR_CODE["YELLOW"]}'+
-         f'Напишите в терминал/консоль: {COLOR_CODE["GREEN"]}apt-get install python3-pip && pip3 install requests bs4{COLOR_CODE["RESET"]}')
+         f'Напишите в терминал/консоль: {COLOR_CODE["GREEN"]}apt-get install python3-pip && pip3 install requests bs4 && pip3 install webbrowser{COLOR_CODE["RESET"]}')
 
 
 if __name__ == "__main__":
@@ -64,7 +65,7 @@ if __name__ == "__main__":
             f'Создать {COLOR_CODE["YELLOW"]}Временную{COLOR_CODE["CYAN"]} почту.{COLOR_CODE["RESET"]}\n'
 
             f'{COLOR_CODE["RED"]}{COLOR_CODE["BOLD"]}[5] {COLOR_CODE["URL_L"]}'
-            f'Поиск {COLOR_CODE["YELLOW"]}по{COLOR_CODE["CYAN"]} ФИ.{COLOR_CODE["RESET"]}\n')
+            f'Проверить {COLOR_CODE["YELLOW"]}ФИ{COLOR_CODE["CYAN"]} по данным.{COLOR_CODE["RESET"]}\n')
 
         try:
         
@@ -98,10 +99,13 @@ if __name__ == "__main__":
 
                 # Поиск по ФИ
             elif user_chooice == "5":
-
-
-
-
+                http_web_name = HttpWebName()
+                name = input(f'{COLOR_CODE["CYAN"]}Введите имя: {COLOR_CODE["RESET"]}')
+                surname = input(f"{COLOR_CODE['CYAN']}Введите фамилию: {COLOR_CODE['RESET']}")
+                town = input(f"{COLOR_CODE['CYAN']}Введите город: {COLOR_CODE['RESET']}")
+                country = input(f"{COLOR_CODE['CYAN']}Введите страну: {COLOR_CODE['RESET']}")
+                result = f"https://rfpoisk.ru/search/?search={name}+{surname}&town={town}&country={country}"
+                webbrowser.open(result)
 
                 input(f'\n{COLOR_CODE["CYAN"]}{COLOR_CODE["BOLD"]}[{COLOR_CODE["RED"]}!{COLOR_CODE["CYAN"]}] {COLOR_CODE["LI_G"]}' +
                   f'Чтобы вернуться назад, нажмите{COLOR_CODE["DARK"]} {COLOR_CODE["RESET"]}PRESS ')
