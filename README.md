@@ -16,6 +16,7 @@
           3. pkg install git -y python3 -y
           4. pkg install openssl
           5. pip install requests bs4 
-          6. git clone https://github.com/TrydyagaaaaaAI/ByteNet
-          7. cd ByteNet
-          8. python3 ByteNet.py
+          6. piip install pyfiglet
+          7. git clone https://github.com/TrydyagaaaaaAI/ByteNet
+          8. cd ByteNet
+          9. python3 ByteNet.py
