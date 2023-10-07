@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup as bs
 
 class Update:
     def __init__(self) -> None:
-        self.__update_link: str = F'{GLOBAL_SOFT_INFO["SOFT_ORIGINAL_LINK"][:-4]}/commits/main'
+        self.__update_link: str = F'{GLOBAL_SOFT_INFO["SOFT_ORIGINAL_LINK"][:-4]}/src/news/version'
 
     def __str__(self) -> str:
         return F"Description: Обновляет клиент и/или уведомляет о новой версии: {self.__update_link}"
@@ -74,6 +74,7 @@ class Update:
                     if not update_checking:
                         print(f'{COLOR_CODE["CYAN"]}{COLOR_CODE["BOLD"]}[*] {COLOR_CODE["LI_G"]}'
                               f'Новые обновлении еще не доступны.{COLOR_CODE["RESET"]}')
+                        time.sleep(2.5)
 
 
 
