@@ -12,6 +12,7 @@ try:
     from src.config import COLOR_CODE, GLOBAL_SOFT_INFO, print_banner, print_welcome_text
     from src.httpweb_ip import HttpWebIp
     from src.httpweb_mnp import HttpWebMnp
+    from src.news.Update import Update
     from src.httpweb_name import HttpWebName
     from src.httpweb_number import HttpWebNumber
     from src.blocked_countries import BlockedCountries
@@ -27,8 +28,7 @@ except ImportError:
 
     print(f'{COLOR_CODE["RED"]}[+] {COLOR_CODE["YELLOW"]}Оригинально программное обеспечение находиться на: '+
          f'{COLOR_CODE["CYAN"]}{GLOBAL_SOFT_INFO["SOFT_ORIGINAL_LINK"]}{COLOR_CODE["RESET"]}\n'+
-         f'{COLOR_CODE["RED"]}[+] {COLOR_CODE["YELLOW"]}'+
-         f'Мы в телеграмме: {COLOR_CODE["CYAN"]}{GLOBAL_SOFT_INFO["SOFT_ORIGINAL_CHANNEL"]}{COLOR_CODE["RESET"]}')
+         f'{COLOR_CODE["RED"]}[+] {COLOR_CODE["YELLOW"]}')
     
     exit(f'\n{COLOR_CODE["RED"]}[!] {COLOR_CODE["YELLOW"]}У вас отсутствует модули: '+
          f'{COLOR_CODE["CYAN"]}requests{COLOR_CODE["RESET"]} и/или {COLOR_CODE["CYAN"]}'+
@@ -74,7 +74,11 @@ if __name__ == "__main__":
             f'Создать {COLOR_CODE["YELLOW"]}Временную{COLOR_CODE["CYAN"]} почту.{COLOR_CODE["RESET"]}\n'
 
             f'{COLOR_CODE["RED"]}{COLOR_CODE["BOLD"]}[5] {COLOR_CODE["URL_L"]}'
-            f'Проверить {COLOR_CODE["YELLOW"]}ФИ{COLOR_CODE["CYAN"]} по данным.{COLOR_CODE["RESET"]}\n')
+            f'Проверить {COLOR_CODE["YELLOW"]}ФИ{COLOR_CODE["CYAN"]} по данным.{COLOR_CODE["RESET"]}\n'
+
+            f'{COLOR_CODE["RED"]}{COLOR_CODE["BOLD"]}[6] {COLOR_CODE["URL_L"]}'
+            f'Проверить {COLOR_CODE["YELLOW"]}Обновления{COLOR_CODE["CYAN"]} программы{COLOR_CODE["RESET"]}\n')
+
 
         try:
         
@@ -120,6 +124,14 @@ if __name__ == "__main__":
 
                 input(f'\n{COLOR_CODE["CYAN"]}{COLOR_CODE["BOLD"]}[{COLOR_CODE["RED"]}!{COLOR_CODE["CYAN"]}] {COLOR_CODE["LI_G"]}' +
                   f'Чтобы вернуться назад, нажмите{COLOR_CODE["DARK"]} {COLOR_CODE["RESET"]}PRESS ')
+
+                # Проверка тех. части
+            elif user_chooice == "6":
+                # Проверка на блокировку
+                BlockedCountries().print_ip_result()
+
+                # Проверка обновлении
+                Update().get()
 
             # Повторный опрос
             else: continue
