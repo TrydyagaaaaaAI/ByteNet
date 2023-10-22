@@ -1,4 +1,4 @@
-# ByteNet
+ # ByteNet
 Программное обеспечение в котором есть следующие функции:
 
   ⌜:full_moon:⌟ Пробив по номеру.
@@ -11,6 +11,7 @@
 
 
 Для Termux:
+
           1. pkg update -y && upgrade -y
 
           2. pkg install python3-pip
