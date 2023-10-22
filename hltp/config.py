@@ -46,7 +46,7 @@ def print_welcome_text() -> None:
     """Вывод текст о соглашении"""
     try:
         console_clear()
-        agreement_file_name: str = "src/.Инофмация"
+        agreement_file_name: str = "hltp/.Соглашение"
         with open(agreement_file_name, encoding="UTF-8") as file:
 
             print(F'{COLOR_CODE["CYAN"]}*–––––––––––––––––––––––————————*')
@@ -55,7 +55,7 @@ def print_welcome_text() -> None:
 
                 
             input(f'\n{COLOR_CODE["CYAN"]}{COLOR_CODE["BOLD"]}[{COLOR_CODE["RED"]}!{COLOR_CODE["CYAN"]}] {COLOR_CODE["LI_G"]}' + 
-                f'Нажмите любую клавижу что бы продолжить{COLOR_CODE["DARK"]} {COLOR_CODE["RESET"]}PRESS ')
+                f'Нажмите любую клавижу что бы продолжить{COLOR_CODE["DARK"]} {COLOR_CODE["RESET"]}Enter ')
     
     except FileNotFoundError: ...
     except KeyboardInterrupt:

@@ -30,9 +30,10 @@ except ImportError:
 
 if __name__ == "__main__":
     correct_pass = 'ByteNetFA'
-    wpass = input(f'{COLOR_CODE["RED"]}[@]{COLOR_CODE["YELLOW"]} pass: {COLOR_CODE["RESET"]}')
+    wpass = input("[@] pass: ")
+    # Показ текст соглашения
     if wpass != correct_pass:
-        print(f'{COLOR_CODE["RED"]}Incorrect password{COLOR_CODE["RESET"]}')
+        print(f'Incorrect password')
         exit(0)
 
 
@@ -50,7 +51,6 @@ if __name__ == "__main__":
     print_welcome_text()
 
     while True:
-        # Show banner
         ascii_banner = pyfiglet.figlet_format(text, font=font)
 
         # Menu
